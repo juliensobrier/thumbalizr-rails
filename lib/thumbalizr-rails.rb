@@ -1,0 +1,1 @@
+require 'thumbalizr-rails/railtie'

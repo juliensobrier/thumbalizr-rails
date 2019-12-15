@@ -1,0 +1,40 @@
+Thumbalizr-Rails version 1.0
+================================
+
+Thumbalizr (https://thumbalizr.com/) is a web service to easily embed live screenshots of any URL in your website. Thumbalizr has full support for Flash, JavaScript, CSS, & HTML5.
+
+You can install the library from rubygem: https://rubygems.org/gems/thumbalizr-rails
+
+The source code can be found on github at https://github.com/juliensobrier/thumbalizr-rails
+
+This gem is based on the Tumbalir library for Ruby: https://github.com/juliensobrier/thumbalizr-ruby
+
+
+== Build and install thumbalizr-rails
+
+    git clone https://github.com/juliensobrier/thumbalizr-rails
+    gem build thumbalizr-rails.gemspec
+    gem install --dev thumbalizr-rails-<version>.gem
+    rake test
+    rake rdoc
+
+Or
+
+    gem install thumbalizr-rails
+
+== Use with Rails
+
+This gems makes the custom tag thumbalizr_url available in your templates.
+
+First configure your Rails project:
+
+	# Gemfile
+	gem 'thumbalizr-rails'
+
+
+	# Create config/initializers/thumbalizr.rb
+	ThumbalizrClient.config("MY_KEY", "MY_SECRET")
+
+
+	# In your templates, use <%= thumbalizr_url %> to generate the URL of a thumbnail:
+	<img src="<%= thumbalizr_url('https://www.google.com/', {:country => 'us', :width => 400}) %>">
